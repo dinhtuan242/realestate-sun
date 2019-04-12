@@ -21,7 +21,6 @@ class UserTableSeeder extends Seeder
             'password' => bcrypt('admin123'),
             'remember_token' => str_random(10),
         ]);
-        factory(App\Models\User::class, 10)->create();
         $role = Role::create([
             'name' => 'super admin',
         ]);

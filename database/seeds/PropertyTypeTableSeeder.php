@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Models\PropertyType;
 
 class PropertyTypeTableSeeder extends Seeder
 {
@@ -10,7 +11,13 @@ class PropertyTypeTableSeeder extends Seeder
      * @return void
      */
     public function run()
-    {
-        factory(App\Models\PropertyType::class, 10)->create();
+    {  
+        for($i = 1; $i < 10; $i++){
+        App\Models\PropertyType::create([
+            'property_category_id' => rand(1, 10),
+            'name' => 'property-' . rand(1, 20),
+            'status' => str_random(100),
+        ]);
+        }
     }
 }

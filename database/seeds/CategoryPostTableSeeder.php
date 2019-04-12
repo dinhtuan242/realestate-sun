@@ -12,6 +12,10 @@ class CategoryPostTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Models\CategoryPost::class, 10)->create();
+        for($i = 1; $i < 10; $i++){
+            CategoryPost::create([
+                'name' => 'categoryPost-' . rand(1, 20),
+            ]);
+        }
     }
 }

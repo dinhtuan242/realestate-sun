@@ -11,11 +11,16 @@ class ProvinceTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Models\Province::class, 64)->create()->each(function ($province)
-        {
-        	$province->districts()->saveMany(factory(App\Models\District::class, rand(1, 10))->create([
-                'provinces_id' => $province->id
-            ]));
-        });
+        for($i = 1; $i < 10; $i++){
+            App\Models\Province::create([
+                'name' => 'province-' . rand(1, 20),
+            ]);
+        }
+        for($i = 1; $i < 10; $i++){
+            App\Models\District::create([    
+                'name' => 'District-' . rand(1, 20),
+                'provinces_id' => rand(1, 20),
+            ]);
+        }
     }
 }

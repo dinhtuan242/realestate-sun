@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Models\PropertyCategory;
 
 class PropertyCategoryTableSeeder extends Seeder
 {
@@ -11,6 +12,8 @@ class PropertyCategoryTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Models\PropertyCategory::class, 10)->create();
+        PropertyCategory::create([
+            'name' => 'propertyCategory-' . rand(1, 20),
+        ]);
     }
 }
