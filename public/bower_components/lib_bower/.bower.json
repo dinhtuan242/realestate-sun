@@ -1,0 +1,25 @@
+{
+  "name": "lib_bower",
+  "authors": [
+    "khaiCM <minhkhai97dbp@gmail.com>"
+  ],
+  "description": "Framgia standard lib Bower",
+  "main": "/",
+  "keywords": [
+    "fonticons"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/KhaiCM/lib_bower.git",
+  "ignore": [
+    "README.md"
+  ],
+  "_release": "b2cb396faf",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "b2cb396faff1ffd98c4d96568cc03671f50566dd"
+  },
+  "_source": "https://github.com/KhaiCM/lib_bower.git",
+  "_target": "*",
+  "_originalSource": "https://github.com/KhaiCM/lib_bower.git"
+}
