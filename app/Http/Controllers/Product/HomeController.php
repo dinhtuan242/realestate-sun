@@ -51,7 +51,7 @@ class HomeController extends Controller
 
         $now = Carbon::now();
     
-        $pp = Property::whereRaw("(days_diff * 24 + DATE_PART('hour', end_date - '" . $now . ")) < 0")->paginate(config('pagination.home'));
+        $pp = Property::whereRaw("(days_diff * 24 + DATE_PART('hour', end_date - '" . $now . ") < 0")->paginate(config('pagination.home'));
 
         return view('fontend.homepages.homepage', compact('properties', 'province', 'district', 'property', 'propertyType', 'propertyCategory', 'pp' ));
     }
