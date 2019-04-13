@@ -51,7 +51,7 @@ class HomeController extends Controller
 
         $now = Carbon::now();
     
-        $pp = Property::whereRaw("DATEDIFF('" . $now . "',end_date) < 0")->paginate(config('pagination.home'));
+        $pp = Property::whereRaw("DATEDIFF('hour', '" . $now . "',end_date) < 0")->paginate(config('pagination.home'));
 
         return view('fontend.homepages.homepage', compact('properties', 'province', 'district', 'property', 'propertyType', 'propertyCategory', 'pp' ));
     }
@@ -74,7 +74,7 @@ class HomeController extends Controller
     {
         $now = Carbon::now();
         
-        $properties = Property::whereRaw("DATEDIFF('" . $now . "', end_date) < 0")->paginate(config('pagination.all'));
+        $properties = Property::whereRaw("DATEDIFF('hour', '" . $now . "', end_date) < 0")->paginate(config('pagination.all'));
 
         return view('fontend.homepages.property_list', compact('properties'));
     }
